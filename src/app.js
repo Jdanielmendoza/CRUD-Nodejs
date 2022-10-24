@@ -18,11 +18,11 @@ app.set('views',path.join(__dirname,'views'));
 // middlewares 
 app.use(morgan('dev')); 
 app.use(myConnection(mysql2,{
-    host:'localhost',
+    database:'railway',
+    host:'containers-us-west-103.railway.app',
+    password:'Jgr7MnIz4zeXCeFbVBsG',
     user:'root',
-    password:'123456789',
-    port:3306,
-    database:'Crud',
+    port:6752,
     ssl:{
         rejectUnauthorized:false
     }
