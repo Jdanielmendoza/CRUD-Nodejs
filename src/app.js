@@ -22,7 +22,10 @@ app.use(myConnection(mysql2,{
     user:'root',
     password:'123456789',
     port:3306,
-    database:'Crud' 
+    database:'Crud',
+    ssl:{
+        rejectUnauthorized:false
+    }
 },'single'));
 // es el equivalente a usar body-parser. para almacenar los datos del form por su name
 app.use(express.urlencoded({extended:false})); 
