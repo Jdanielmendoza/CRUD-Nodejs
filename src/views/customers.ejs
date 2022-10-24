@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD-nodejs</title>
+    <link rel="stylesheet" href="./style.css"><!-- en el app.js ya esta en uso la carpeta public  -->
+</head>
+<body>
+        <nav><a href="/"> CRUD JD </a></nav>
+        <form action="/add" method="post">
+            <input type="text" name="name" placeholder="Nombre" required >
+            <input type="text" name="addres" placeholder="Direccion " required>
+            <input type="text" name="phone" placeholder="Telefono" required>
+            <input type="submit" value="Registrar" class="boton">
+        </form>
+        <table class="table">
+            <thead class="table-encabezado">
+                <td>id</td>
+                <td>name</td>
+                <td>address</td>
+                <td>Phone</td>
+                <td class="accion-colum">Actions</td>
+            </thead>
+            <% for(let i =0; i < data.length ; i++ ) { %>
+                <tr>
+                    <td><%= (i+1) %></td>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].addres %></td>
+                    <td><%= data[i].phone %></td>
+                    <td class="accion">
+                       <a href="/delete/<%= data[i].id%>" class="del" >Del</a>
+                        <a href="/update/<%= data[i].id%>" class="upt">Upt</a>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    
+</body>
+</html>

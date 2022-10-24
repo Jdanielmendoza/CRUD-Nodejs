@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <style>
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #444; 
+    padding: 10px;
+    font-size: 34px;
+    font-weight: 900;
+    position: fixed;
+    top:0;
+}
+nav>a{
+    text-decoration: none;
+    color: #fff; 
+}
+
+        *{
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:10px; 
+}
+form{
+    width: 100%;
+    max-width: 550px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #444;
+    padding: 30px; 
+    margin-top: 100px;
+}
+input{
+    width: 100%;
+    margin:10px 0; 
+    padding: 10px;
+    border-style: none;
+    background-color: #fff; 
+    box-shadow: 1px 1px 10px #ccc;
+}
+.boton{
+    font-size: 20px;
+    font-weight: 700;
+}
+.boton:active{
+    background-color: #60ce71;
+}
+
+    </style>
+</head>
+<body>
+    <nav><a href="/"> Actualizar </a></nav>
+    <form action="/update/<%= data[0].id %>" method="post">
+        <input type="text" name="name"   value="<%= data[0].name %>" placeholder="Nombre" required >
+        <input type="text" name="addres" value="<%= data[0].addres %>" placeholder="Direccion " required>
+        <input type="text" name="phone"  value="<%= data[0].phone %>" placeholder="Telefono" required>
+        <input type="submit" value="Actualizar" class="boton">
+    </form>
+</body>
+</html>
